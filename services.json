@@ -23,7 +23,7 @@
       "port": 3001,
       "path": "~/ztgi/lawyers_and_dragons/backend",
       "type": "backend",
-      "startCmd": "python3 main.py",
+      "startCmd": "uvicorn main:app --host 0.0.0.0 --port 3001",
       "github": "https://github.com/nothinginfinity/lawyers_and_dragons",
       "endpoints": ["/docs", "/api/game/sessions"]
     },
