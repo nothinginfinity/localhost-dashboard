@@ -1,0 +1,15 @@
+{
+  "name": "localhost-dashboard",
+  "version": "1.0.0",
+  "description": "Local development services dashboard with start/stop controls",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.3"
+  }
+}
