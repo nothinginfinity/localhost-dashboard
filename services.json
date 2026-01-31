@@ -1,8 +1,44 @@
 {
   "services": [
     {
-      "name": "Email-for-AI Dashboard",
+      "name": "Lawyers & Dragons Frontend",
       "port": 3000,
+      "path": "~/ztgi/lawyers_and_dragons/frontend",
+      "type": "frontend",
+      "startCmd": "npm run dev",
+      "github": "https://github.com/nothinginfinity/lawyers-and-dragons",
+      "endpoints": ["/", "/browse", "/game", "/mock-trial", "/mediation"]
+    },
+    {
+      "name": "Lawyers & Dragons Dashboard",
+      "port": 5173,
+      "path": "~/ztgi/lawyers_and_dragons/dashboard",
+      "type": "frontend",
+      "startCmd": "npm run dev",
+      "github": "https://github.com/nothinginfinity/lawyers-and-dragons",
+      "endpoints": ["/", "/leads", "/analytics", "/settings"]
+    },
+    {
+      "name": "Lawyers & Dragons Lawyer Portal",
+      "port": 3007,
+      "path": "~/ztgi/lawyers_and_dragons/lawyer-portal",
+      "type": "frontend",
+      "startCmd": "npm run dev",
+      "github": "https://github.com/nothinginfinity/lawyers-and-dragons",
+      "endpoints": ["/", "/cases", "/clients"]
+    },
+    {
+      "name": "Lawyers & Dragons API",
+      "port": 8000,
+      "path": "~/ztgi/lawyers_and_dragons/backend",
+      "type": "backend",
+      "startCmd": "uvicorn main:app --host 0.0.0.0 --port 8000",
+      "github": "https://github.com/nothinginfinity/lawyers-and-dragons",
+      "endpoints": ["/docs", "/api/game/sessions", "/api/clients"]
+    },
+    {
+      "name": "Email-for-AI Dashboard",
+      "port": 8001,
       "path": "~/ztgi/email-for-ai/dashboard",
       "type": "frontend",
       "startCmd": "npm run dev",
@@ -11,21 +47,12 @@
     },
     {
       "name": "Email-for-AI Backend",
-      "port": 8000,
+      "port": 8010,
       "path": "~/ztgi/email-for-ai",
       "type": "backend",
       "startCmd": "python3 main.py",
       "github": "https://github.com/nothinginfinity/email-for-ai",
       "endpoints": ["/docs"]
-    },
-    {
-      "name": "Lawyers & Dragons API",
-      "port": 3001,
-      "path": "~/ztgi/lawyers_and_dragons/backend",
-      "type": "backend",
-      "startCmd": "uvicorn main:app --host 0.0.0.0 --port 3001",
-      "github": "https://github.com/nothinginfinity/lawyers_and_dragons",
-      "endpoints": ["/docs", "/api/game/sessions"]
     },
     {
       "name": "PHI Proxy",
@@ -37,130 +64,40 @@
       "endpoints": ["/"]
     },
     {
-      "name": "PHI Command Center",
-      "port": 5173,
-      "path": "~/ztgi/phi_command_center_desktop",
+      "name": "Copy Not Paste - Browser",
+      "port": 7891,
+      "path": "~/ztgi/copy_not_paste",
       "type": "frontend",
-      "startCmd": "npm run dev",
-      "github": "https://github.com/nothinginfinity/prax-command-center",
-      "endpoints": ["/"]
+      "startCmd": "python3 cnp_browser/app.py",
+      "github": "https://github.com/nothinginfinity/copy-not-paste",
+      "endpoints": ["/", "/timeline", "/ask"]
     },
     {
-      "name": "Prax Chat",
-      "port": 3003,
-      "path": "~/ztgi/prax-chat",
-      "type": "frontend",
-      "startCmd": "npm run dev",
-      "github": "https://github.com/nothinginfinity/prax-chat",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "MCP Twin",
-      "port": 3002,
-      "path": "~/ztgi/mcp-twin",
+      "name": "Copy Not Paste - API",
+      "port": 7890,
+      "path": "~/ztgi/copy_not_paste",
       "type": "api",
-      "startCmd": "npm start",
-      "github": "https://github.com/nothinginfinity/mcp-twin",
-      "endpoints": ["/"]
+      "startCmd": "python3 cnp_api.py",
+      "github": "https://github.com/nothinginfinity/copy-not-paste",
+      "endpoints": ["/", "/health", "/history", "/search", "/resolve"]
     },
     {
-      "name": "MCP Twin Gateway",
-      "port": 3004,
-      "path": "~/ztgi/mcp-twin-gateway",
+      "name": "ZTGI UI Library",
+      "port": 7892,
+      "path": "~/ztgi/ztgi-ui",
       "type": "api",
-      "startCmd": "npm start",
-      "github": "",
-      "endpoints": ["/"]
+      "startCmd": "node server.js",
+      "github": "https://github.com/nothinginfinity/ztgi-ui",
+      "endpoints": ["/", "/ztgi-ui.js", "/configs", "/health"]
     },
     {
-      "name": "Ralph Service",
-      "port": 8001,
-      "path": "~/ztgi/ralph-service",
-      "type": "backend",
-      "startCmd": "python3 main.py",
-      "github": "https://github.com/nothinginfinity/ralph-service",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "Stone Vault",
-      "port": 8002,
-      "path": "~/ztgi/stone-vault",
-      "type": "backend",
-      "startCmd": "python3 main.py",
-      "github": "https://github.com/nothinginfinity/stone-vault",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "Golden Library",
-      "port": 8003,
-      "path": "~/ztgi/golden_library",
-      "type": "backend",
-      "startCmd": "python3 main.py",
-      "github": "https://github.com/nothinginfinity/golden_library",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "Parallel Internet",
-      "port": 4000,
-      "path": "~/ztgi/parallel-internet",
+      "name": "Localhost Dashboard",
+      "port": 9999,
+      "path": "~/ztgi/localhost-dashboard",
       "type": "frontend",
-      "startCmd": "npm run dev",
-      "github": "https://github.com/nothinginfinity/parallel-internet",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "Agentic Chat Rooms",
-      "port": 3005,
-      "path": "~/ztgi/agentic-chat-rooms",
-      "type": "frontend",
-      "startCmd": "npm run dev",
-      "github": "https://github.com/nothinginfinity/agentic-chat-rooms",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "QAStone Vending Machine",
-      "port": 8004,
-      "path": "~/ztgi/qastone-vending-machine",
-      "type": "backend",
-      "startCmd": "python3 main.py",
-      "github": "https://github.com/nothinginfinity/qastone-vending-machine",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "Hub Chainlit",
-      "port": 8005,
-      "path": "~/ztgi/hub_chainlit",
-      "type": "backend",
-      "startCmd": "chainlit run app.py",
+      "startCmd": "node server.js",
       "github": "",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "LLM App Template",
-      "port": 8006,
-      "path": "~/ztgi/llm-app-template",
-      "type": "backend",
-      "startCmd": "python3 main.py",
-      "github": "https://github.com/nothinginfinity/llm-app-template",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "CStone SaaS",
-      "port": 8007,
-      "path": "~/ztgi/cstone_saas",
-      "type": "backend",
-      "startCmd": "python3 main.py",
-      "github": "",
-      "endpoints": ["/"]
-    },
-    {
-      "name": "Slop App",
-      "port": 3006,
-      "path": "~/ztgi/slop_app",
-      "type": "frontend",
-      "startCmd": "npm run dev",
-      "github": "",
-      "endpoints": ["/"]
+      "endpoints": ["/", "/api/services", "/api/status"]
     }
   ]
 }
